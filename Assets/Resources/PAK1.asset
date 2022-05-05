@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e3557254cafb24fbd77cfb83110609, type: 3}
+  m_Name: PAK1
+  m_EditorClassIdentifier: 
+  Tex1: {fileID: 3963339967742801307, guid: f5774b528c482da4ba7b8b19e8144e78, type: 3}
+  Tex2: {fileID: 4204481046936282232, guid: 6e5f2963e70c34e49b53cd0b359c34c9, type: 3}
+  Tex3: {fileID: 5728555304721599858, guid: 3ac241ca3a2d3d14d81db2f783bfaf3c, type: 3}
+  Tex4: {fileID: 7784200136307572010, guid: 84e313b526a27ec41b7df2326104bb11, type: 3}
+  Tex5: {fileID: 3883251344973174570, guid: 1e4ae9645e2a6df44ba7fd00fa53cfa8, type: 3}
+  Tex6: {fileID: 5486924281836412750, guid: 463cabbe60d413a43a7c4cad9f51d666, type: 3}
+  Tex7: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex8: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex9: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex10: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex11: {fileID: 6801950845180284288, guid: 137d2759af639b741a5ddd6e9b4a054a, type: 3}
+  Tex12: {fileID: 1272083627090740620, guid: 8d57301a506af37449cbddb628e27406, type: 3}
+  Tex13: {fileID: 5872546697205949941, guid: d113181cb9528674d92b15aef65cce99, type: 3}
+  Tex14: {fileID: 7522186863191501340, guid: 34e03fd73a6565b419e10b5445fe8cfa, type: 3}
+  Tex15: {fileID: 2574347316690736583, guid: f717bede642136f4880a9cc07153f73d, type: 3}
+  Tex16: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex17: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex18: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex19: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex20: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex21: {fileID: 4598259554614530560, guid: 6e28ffa4326065b4b805717e1c8f0ca4, type: 3}
+  Tex22: {fileID: 3738592346307129138, guid: 64b32f7f6b389d54182011d15ec10fc6, type: 3}
+  Tex23: {fileID: 3904313320642212601, guid: c804747d03d6e3b48b9935db8598c666, type: 3}
+  Tex24: {fileID: 6772338469930289359, guid: f879030bed007a64c951f522a69720ff, type: 3}
+  Tex25: {fileID: 6394135147094166165, guid: 41aaf9c72bbeaa64fa32f24cdc1c7d4e, type: 3}
+  Tex26: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex27: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex28: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex29: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex30: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex31: {fileID: 5350822841990282152, guid: 4646d0d299acf2a459bf76e87591426e, type: 3}
+  Tex32: {fileID: 6538417270009163967, guid: 614a437e52853a043aea48db4b7220aa, type: 3}
+  Tex33: {fileID: 7555552014438504724, guid: 0a1290fd37b9a2f42a4ad584de0d8a91, type: 3}
+  Tex34: {fileID: 7102747227795308349, guid: 236e6d2fb00d19847857e1acf4545c8c, type: 3}
+  Tex35: {fileID: 2175482173677805463, guid: 11bd816004a995549b94712a26c0ad16, type: 3}
+  Tex36: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex37: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex38: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex39: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Tex40: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}

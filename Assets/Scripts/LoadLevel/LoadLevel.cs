@@ -17,7 +17,7 @@ public class LoadLevel : MonoBehaviour
 
     void Start()
     {
-        var asset = Resources.Load<TextAsset>("Levels/map");
+        var asset = Resources.Load<TextAsset>("Levels/game1");
         var charArray = asset.text.ToCharArray();
         Debug.Log(charArray.Length);
         DefaultCollection = Resources.Load<PAK>("PAK1");
@@ -40,6 +40,10 @@ public class LoadLevel : MonoBehaviour
                     else if(charArray[i] == emptySpace)
                     {
                         
+                    }
+                    else if (charArray[i] == '@' || charArray[i] == 'A' || charArray[i] == 'B' || charArray[i] == 'C' || charArray[i] == 'D' || charArray[i] == 'F' || charArray[i] == 'G' || charArray[i] == 'H' || charArray[i] == 'I')
+                    {
+                        GameObject.Instantiate(newObject, new Vector3(x * step, 0, y * step), Quaternion.identity, levelParent.transform);
                     }
                     else
                     {

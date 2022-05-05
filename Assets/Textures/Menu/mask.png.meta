@@ -112,12 +112,12 @@ TextureImporter:
       name: health
       rect:
         serializedVersion: 2
-        x: 20
-        y: 22
-        width: 57
-        height: 61
+        x: 14
+        y: 1
+        width: 68
+        height: 94
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -138,7 +138,7 @@ TextureImporter:
         width: 36
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

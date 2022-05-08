@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PAK", menuName = "PAK/lCollection", order = 1)]
+[CreateAssetMenu(fileName = "PAK", menuName = "PAK/Collection", order = 1)]
 public class PAK : ScriptableObject
 {
     [Header("Walls")]
@@ -44,6 +44,8 @@ public class PAK : ScriptableObject
     public GameObject Tex38;
     public GameObject Tex39;
     public GameObject Tex40;
+    [Header("Next level")]
+    public GameObject NextLevel;
     [Header("Sprites")]
     public GameObject Sprite1;
     public GameObject Sprite2;
@@ -55,4 +57,20 @@ public class PAK : ScriptableObject
     public GameObject Sprite8;
     public GameObject Sprite9;
     public GameObject Sprite10;
+    [Header("Weapons")]
+    public GameObject Weapon1;
+    public GameObject Weapon2;
+    public GameObject Weapon3;
+    public GameObject Weapon4;
+    public GameObject Weapon5;
+    public GameObject Weapon6;
+    [Header("Ammunitions")]
+    public GameObject AmmoBox;
+    public GameObject Medkit;
+    [Header("Enemies")]
+    public GameObject Enemy1;
+    public GameObject Enemy2;
+    public GameObject Enemy3;
+    public GameObject Enemy4;
+    public GameObject Enemy5;
 }

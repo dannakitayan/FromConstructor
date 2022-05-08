@@ -72,7 +72,7 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _WaveAmplitude: 0.06
-    - _WaveFrequency: 0.04
+    - _WaveFrequency: 0.15
     - _WaveScale: 0.4
     - _ZWrite: 1
     m_Colors:

@@ -66,6 +66,23 @@ public class Map
         'H' => rgm.Sprite9,
         'I' => rgm.Sprite10,
 
+        'X' => rgm.AmmoBox,
+        'W' => rgm.Medkit,
+        '9' => rgm.NextLevel,
+
+        'Q' => rgm.Weapon1,
+        'R' => rgm.Weapon2,
+        'S' => rgm.Weapon3,
+        'T' => rgm.Weapon4,
+        'U' => rgm.Weapon5,
+        'V' => rgm.Weapon6,
+
+        'h' => rgm.Enemy1,
+        'i' => rgm.Enemy2,
+        'j' => rgm.Enemy3,
+        'k' => rgm.Enemy4,
+        'l' => rgm.Enemy5,
+
         _ => rgm.Tex40
     };
 }

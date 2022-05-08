@@ -33,21 +33,72 @@ public class LoadLevel : MonoBehaviour
                 if(i < charArray.Length)
                 {
                     var newObject = objects.GetObject(charArray[i]);
-                    if (charArray[i] == nextLine)
+                    switch(charArray[i])
                     {
-
-                    }
-                    else if(charArray[i] == emptySpace)
-                    {
-                        
-                    }
-                    else if (charArray[i] == '@' || charArray[i] == 'A' || charArray[i] == 'B' || charArray[i] == 'C' || charArray[i] == 'D' || charArray[i] == 'F' || charArray[i] == 'G' || charArray[i] == 'H' || charArray[i] == 'I')
-                    {
-                        GameObject.Instantiate(newObject, new Vector3(x * step, 0, y * step), Quaternion.identity, levelParent.transform);
-                    }
-                    else
-                    {
-                        GameObject.Instantiate(newObject, new Vector3(x * step, 1, y * step), Quaternion.identity, levelParent.transform);
+                        case nextLine:
+                            break;
+                        case emptySpace:
+                            break;
+                            //Sprites;
+                        case '@':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                        case 'A':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                        case 'B':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                        case 'C':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                        case 'D':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                        case 'E':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                        case 'F':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                        case 'G':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                        case 'H':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                        case 'I':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                            //Ammunition;
+                        case 'X':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                        case 'W':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            //Weapons;
+                            break;
+                        case 'Q':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                        case 'R':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                        case 'S':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                        case 'T':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                        case 'U':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                        case 'V':
+                            CreateEntity(newObject, x, y, levelParent.transform);
+                            break;
+                        default:
+                            CreateEntity(newObject, x, y, levelParent.transform, 1);
+                            break;
                     }
                     i += 1;
                 }
@@ -55,5 +106,10 @@ public class LoadLevel : MonoBehaviour
         }
 
         Debug.Log("all: " + i);
+    }
+
+    void CreateEntity(GameObject newObject, int x, int y, Transform parent, int height = 0)
+    {
+        GameObject.Instantiate(newObject, new Vector3(x * step, height, y * step), Quaternion.identity, parent);
     }
 }

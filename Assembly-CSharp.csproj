@@ -59,19 +59,19 @@
     <Compile Include="Assets\Scripts\WeaponManager\WeaponParameter.cs" />
     <Compile Include="Assets\Scripts\WeaponManager\Weapons\Weapon3.cs" />
     <Compile Include="Assets\Scripts\LoadLevel\LoadLevel.cs" />
+    <Compile Include="Assets\Scripts\Grunt\PlayerParameters.cs" />
     <Compile Include="Assets\Scripts\MainHud\MainHud.cs" />
     <Compile Include="Assets\Scripts\LoadLevel\PAK.cs" />
     <Compile Include="Assets\Scripts\LoadLevel\Map.cs" />
     <Compile Include="Assets\Scripts\WeaponManager\Weapons\Weapon1.cs" />
+    <Compile Include="Assets\Scripts\WeaponManager\MainCameraShake.cs" />
     <Compile Include="Assets\GruntPrefab\Scripts\Grunt.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\WeaponManager\DefaultWeapon.cs" />
+    <Compile Include="Assets\Scripts\Grunt\PlayerSingleton.cs" />
     <Compile Include="Assets\Scripts\WeaponManager\WeaponManager.cs" />
     <Compile Include="Assets\Scripts\WeaponManager\Weapons.cs" />
-    <Compile Include="Assets\Scripts\Grunt\PlayerParameters.cs" />
-    <Compile Include="Assets\Scripts\Grunt\PlayerSingleton.cs" />
     <Compile Include="Assets\Scripts\Items\TakeWeapon.cs" />
-    <Compile Include="Assets\Scripts\WeaponManager\MainCameraShake.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

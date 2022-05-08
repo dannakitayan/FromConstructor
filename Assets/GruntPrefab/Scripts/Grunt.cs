@@ -56,13 +56,14 @@ public class Grunt : MonoBehaviour
 		rotateAmountY += Input.GetAxis("Mouse Y") * MouseSensitivity * Time.deltaTime;
 
 		//Limit a rotation of the camera along by X axis; Ограничение вращения камеры по оси Х;
+		rotateAmountY += MainCameraShake.Angle;
 		rotateAmountY = Mathf.Clamp(rotateAmountY, -60f, 60f);
 
 		//Rotate grunt;
 		transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, rotateAmountX, 0f);
-		//Rotate camera;
-		HeroHead.transform.rotation = Quaternion.Euler(-rotateAmountY, HeroHead.transform.rotation.eulerAngles.y, 0);
-	}
+        //Rotate camera;
+        HeroHead.transform.rotation = Quaternion.Euler(-rotateAmountY, HeroHead.transform.rotation.eulerAngles.y, 0);
+    }
 
 	void Movement()
 	{

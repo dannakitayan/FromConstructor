@@ -13,10 +13,12 @@ public class SoundManager : MonoBehaviour
     void OnEnable()
     {
         onWeaponPlay += WeaponPlay;
+        onPlayerPlay += PlayerPlay;
     }
     void OnDisable()
     {
         onWeaponPlay -= WeaponPlay;
+        onPlayerPlay -= PlayerPlay;
     }
 
     public static Action<AudioClip> onWeaponPlay;
@@ -25,5 +27,10 @@ public class SoundManager : MonoBehaviour
     void WeaponPlay(AudioClip sound)
     {
         weaponSource.PlayOneShot(sound);
+    }
+
+    void PlayerPlay(AudioClip sound)
+    {
+        playerSource.PlayOneShot(sound);
     }
 }

@@ -18,6 +18,7 @@ public class Weapon3 : DefaultWeapon
     {
         if (!CanShot()) return;
         canShot = false;
+        WeaponManager.isShooting = !canShot;
         StartCoroutine(GetShot());
     }
 
@@ -25,9 +26,10 @@ public class Weapon3 : DefaultWeapon
     {
         animator.SetTrigger(weaponParameter.ShotTriggerName);
         SoundManager.onWeaponPlay?.Invoke(weaponParameter.Shot);
+        MainCameraShake.onShake?.Invoke(130);
         yield return new WaitForSeconds(weaponParameter.TimeBetweenShots);
-        currentWeaponAmmo -= 2;
-        MainHud.onAmmoSet?.Invoke(currentWeaponAmmo.ToString());
+        PlayerSingleton.Get().Player.ChangeAmmo(-2);
         canShot = true;
+        WeaponManager.isShooting = !canShot;
     }
 }

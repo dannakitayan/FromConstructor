@@ -33,4 +33,9 @@ public class MainHud : MonoBehaviour
     {
         Ammo.text = text;
     }
+
+    void Update()
+    {
+        Ammo.text = PlayerSingleton.Get().Player.GetAmmoCount().ToString();
+    }
 }

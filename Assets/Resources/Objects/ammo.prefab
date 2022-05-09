@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 472684027127623306}
   - component: {fileID: 472684027127623307}
+  - component: {fileID: 4805216378301739965}
   m_Layer: 0
   m_Name: ammo
   m_TagString: Untagged
@@ -27,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2799316378758418368}
   m_Father: {fileID: 0}
@@ -45,6 +47,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &4805216378301739965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472684027127623304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6feeb27b4d8978f40a6723e8f865dc3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 1
+  TakeSound: {fileID: 8300000, guid: 64333e4f1d838af43b61f4621dec7196, type: 3}
 --- !u!1 &607116926409183741
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,6 +88,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 73736425426077223}
   m_Father: {fileID: 472684027127623306}
@@ -79,7 +96,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3322196046761497460
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,6 +109,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -124,6 +142,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0.421, z: 0}
   m_LocalScale: {x: 20.791553, y: 20.791552, z: 20.791552}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2799316378758418368}
   m_RootOrder: 0
@@ -147,6 +166,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

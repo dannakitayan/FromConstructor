@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\WeaponManager\WeaponManager.cs" />
     <Compile Include="Assets\Scripts\WeaponManager\Weapons.cs" />
     <Compile Include="Assets\Scripts\Items\TakeWeapon.cs" />
+    <Compile Include="Assets\Scripts\Items\TakeItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

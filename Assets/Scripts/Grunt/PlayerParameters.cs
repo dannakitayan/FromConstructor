@@ -16,7 +16,7 @@ public class WeaponCluster
 [Serializable]
 public class PlayerParameters
 {
-    int health;
+    int health = 100;
     Weapons currentWeapon = Weapons.NULL;
     List<WeaponCluster> weaponsPack = new List<WeaponCluster>();
     Transform playerPosition;
@@ -50,6 +50,22 @@ public class PlayerParameters
         }
         return ammo;
     }
+
+    public int GetMaxAmmoCount()
+    {
+        int ammo = 0;
+        var weaponList = Cluster(currentWeapon);
+        if (weaponList.Count<WeaponCluster>() > 0)
+        {
+            foreach (var element in weaponList)
+            {
+                ammo = element.MaxAmmo;
+                break;
+            }
+        }
+        return ammo;
+    }
+
     public Weapons CurrentWeapon
     {
         get

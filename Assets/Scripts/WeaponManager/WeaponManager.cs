@@ -12,10 +12,15 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] DefaultWeapon weapon4;
     [SerializeField] DefaultWeapon weapon5;
     [SerializeField] DefaultWeapon weapon6;
-
+    [Header("A weapon flashlight")]
+    [SerializeField] GameObject weaponFlashLight;
+    [Header("A player flashlight")]
+    [SerializeField] GameObject playerFlashLight;
+    [Header("Start level with a weapon")]
     public Weapons StartWith;
 
     public static Action onShot;
+    public static Action onWeaponFlashLight;
     public static Action<Weapons> onChange;
     public static bool isShooting = false;
 
@@ -29,11 +34,13 @@ public class WeaponManager : MonoBehaviour
     void OnEnable()
     {
         onChange += SetWeapon;
+        onWeaponFlashLight += ExecuteWeaponFlashLight;
     }
 
     void OnDisable()
     {
         onChange -= SetWeapon;
+        onWeaponFlashLight -= ExecuteWeaponFlashLight;
     }
     #endregion
 
@@ -122,6 +129,21 @@ public class WeaponManager : MonoBehaviour
     }
     #endregion
 
+    #region A weapon flashlight
+    void ExecuteWeaponFlashLight()
+    {
+        StartCoroutine(WeaponFlashLight());
+    }
+
+    IEnumerator WeaponFlashLight()
+    {
+        yield return new WaitForSeconds(0.07f);
+        weaponFlashLight.SetActive(true);
+        yield return new WaitForSeconds(0.15f);
+        weaponFlashLight.SetActive(false);
+    }
+    #endregion
+
     void Update()
     {
         #region Shot
@@ -155,6 +177,13 @@ public class WeaponManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             GetWeaponFromTheBag(6);
+        }
+        #endregion
+
+        #region A player flashlight
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            playerFlashLight.SetActive(!playerFlashLight.activeSelf);
         }
         #endregion
     }

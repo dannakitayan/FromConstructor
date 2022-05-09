@@ -26,6 +26,7 @@ public class Weapon1 : DefaultWeapon
     {
         animator.SetTrigger(weaponParameter.ShotTriggerName);
         SoundManager.onWeaponPlay?.Invoke(weaponParameter.Shot);
+        WeaponManager.onWeaponFlashLight?.Invoke();
         MainCameraShake.onShake?.Invoke(80);
         yield return new WaitForSeconds(weaponParameter.TimeBetweenShots);
         PlayerSingleton.Get().Player.ChangeAmmo(-1);

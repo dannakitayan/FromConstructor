@@ -37,5 +37,6 @@ public class MainHud : MonoBehaviour
     void Update()
     {
         Ammo.text = PlayerSingleton.Get().Player.GetAmmoCount().ToString();
+        Health.text = PlayerSingleton.Get().Player.Health.ToString();
     }
 }

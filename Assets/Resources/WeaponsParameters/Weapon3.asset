@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e12386e42e66343a2ef4c2ca08c282, type: 3}
   m_Name: Weapon3
   m_EditorClassIdentifier: 
-  StartAmmo: 20
+  StartAmmo: 4
   MaxAmmo: 40
   MinimumAmmoInMagazine: 1
   TimeBetweenShots: 2.5
-  Range: 0
+  Range: 24
+  Angle: 130
   ShotTriggerName: Shot
   Shot: {fileID: 8300000, guid: 1fadfc2ab33a51d40934c6ec3075ffef, type: 3}

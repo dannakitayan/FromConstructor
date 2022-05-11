@@ -9,20 +9,26 @@ public class SoundManager : MonoBehaviour
     AudioSource playerSource;
     [SerializeField]
     AudioSource weaponSource;
+    [SerializeField]
+    AudioSource explosionSource;
 
     void OnEnable()
     {
         onWeaponPlay += WeaponPlay;
         onPlayerPlay += PlayerPlay;
+        onExplosionPlay += ExplosionPlay;
     }
     void OnDisable()
     {
         onWeaponPlay -= WeaponPlay;
         onPlayerPlay -= PlayerPlay;
+        onExplosionPlay -= ExplosionPlay;
     }
 
     public static Action<AudioClip> onWeaponPlay;
     public static Action<AudioClip> onPlayerPlay;
+    public static Action onExplosionPlay;
+
 
     void WeaponPlay(AudioClip sound)
     {
@@ -32,5 +38,10 @@ public class SoundManager : MonoBehaviour
     void PlayerPlay(AudioClip sound)
     {
         playerSource.PlayOneShot(sound);
+    }
+
+    void ExplosionPlay()
+    {
+        explosionSource.Play();
     }
 }

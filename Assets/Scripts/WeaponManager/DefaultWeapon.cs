@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class DefaultWeapon : MonoBehaviour
 {
-    [SerializeField]
     public WeaponParameter weaponParameter;
     protected Animator animator;
     protected bool canShot;
@@ -25,4 +24,24 @@ public abstract class DefaultWeapon : MonoBehaviour
     {
         return HaveAmmo() && canShot;
     }
+
+	protected virtual void Damage(int damageValue)
+	{
+
+		int num = 2;
+		num = ~num;
+		RaycastHit hitInfo;
+		if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, weaponParameter.Range, num) && hitInfo.collider != null)
+		{
+            //if (hitInfo.collider.tag == "Robot")
+            //{
+            //	Object.Instantiate(RobotParticle, hitInfo.point + hitInfo.normal * 0.001f, Quaternion.LookRotation(hitInfo.normal));
+            //	hitInfo.collider.GetComponent<EnemyBase>().Hitting(damageValue + Parameters.AddDamage);
+            //}
+            if (hitInfo.collider.tag == "Barrel")
+            {
+                hitInfo.collider.GetComponent<ExplosionBarrel>().GetExplosion();
+            }
+        }
+	}
 }

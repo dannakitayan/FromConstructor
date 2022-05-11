@@ -33,7 +33,7 @@ public class PlayerParameters
         set
         {
             if (health + value > 100) health = 100;
-            health = value;
+            else health += value;
         }
     }
     public int GetAmmoCount()
@@ -50,7 +50,6 @@ public class PlayerParameters
         }
         return ammo;
     }
-
     public int GetMaxAmmoCount()
     {
         int ammo = 0;
@@ -65,7 +64,6 @@ public class PlayerParameters
         }
         return ammo;
     }
-
     public Weapons CurrentWeapon
     {
         get
@@ -171,7 +169,6 @@ public class PlayerParameters
         var weaponList = from w in weaponsPack
                          where w.Weapon == weapon
                          select w;
-        Debug.Log(weaponsPack.Count);
         if (weaponList.Count<WeaponCluster>() > 0) return true;
         else return false;
     }

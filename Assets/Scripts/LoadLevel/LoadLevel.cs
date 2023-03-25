@@ -7,129 +7,23 @@ using UnityEngine;
 public class LoadLevel : MonoBehaviour
 {
     const int step = 2;
-
     const char nextLine = '\n';
     const char emptySpace = 'x';
+    PAK DefaultCollection;
+    Map objects;
+    List<Transform> walls = new List<Transform>();
 
     public string LevelName;
 
-    static PAK DefaultCollection;
-    Map objects;
-
-    [SerializeField]
-    List<Transform> walls = new List<Transform>();
+    [Header("Debug")]
+    public Transform PlayerTransform;
 
     void Start()
     {
-        var asset = Resources.Load<TextAsset>($"Levels/{LevelName}");
-        var charArray = asset.text.ToCharArray();
         DefaultCollection = Resources.Load<PAK>("PAK1");
         objects = new Map(DefaultCollection);
 
-        var levelParent = new GameObject(LevelName);
-
-        int i = 0;
-        for (int y = 0; y < 64; y++)
-        {
-            for (int x = 0; x < 66; x++)
-            {
-                #region Fill
-                if (i < charArray.Length)
-                {
-                    if(y > 0 && y < 63 && x > 0 && x < 63)
-                    {
-                        var newObject = objects.GetObject(charArray[i]);
-                        switch (charArray[i])
-                        {
-                            case nextLine:
-                                break;
-                            case emptySpace:
-                                break;
-                            //Sprites;
-                            case '@':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'A':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'B':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'C':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'D':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'E':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'F':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'G':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'H':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'I':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            //Ammunition;
-                            case 'X':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'W':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;                                
-                            //Weapons;
-                            case 'Q':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'R':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'S':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'T':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'U':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'V':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            //Enemies;
-                            case 'h':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'i':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'j':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'k':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            case 'l':
-                                CreateEntity(newObject, x, y, levelParent.transform);
-                                break;
-                            default:
-                                CreateEntity(newObject, x, y, levelParent.transform, 1);
-                                break;
-                        }
-                    }
-                    
-                }
-                #endregion
-                i += 1;
-            }
-        }
-
+        BuildLevel();
         Optimisation();
     }
 
@@ -162,6 +56,43 @@ public class LoadLevel : MonoBehaviour
                 }
             }
             //break;
+        }
+
+        walls.Clear();
+    }
+
+    void BuildLevel()
+    {
+        var asset = Resources.Load<TextAsset>($"Levels/{LevelName}");
+        var charArray = asset.text.ToCharArray();
+
+        var levelParent = new GameObject(LevelName);
+
+        int i = 0;
+        for (int y = 0; y < 66; y++)
+        {
+            for (int x = 0; x < 66; x++)
+            {
+                if (i < charArray.Length)
+                {
+                    if (y < 65 && x < 64)
+                    {
+                        var newObject = objects.GetObject(charArray[i]);
+                        switch (charArray[i])
+                        {
+                            case nextLine:
+                                break;
+                            case emptySpace:
+                                break;
+                            default:
+                                CreateEntity(newObject, -x, y, levelParent.transform, 1);
+                                break;
+                        }
+                    }
+
+                }
+                i += 1;
+            }
         }
     }
 }

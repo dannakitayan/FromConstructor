@@ -73,4 +73,8 @@ public class PAK : ScriptableObject
     public GameObject Enemy3;
     public GameObject Enemy4;
     public GameObject Enemy5;
+    [Header("Door")]
+    public GameObject Door;
+    [Header("Player")]
+    public GameObject Player;
 }

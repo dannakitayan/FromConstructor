@@ -83,6 +83,9 @@ public class Map
         'k' => rgm.Enemy4,
         'l' => rgm.Enemy5,
 
+        '8' => rgm.Door,
+        '\\' => rgm.Player,
+
         _ => rgm.Tex40
     };
 }

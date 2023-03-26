@@ -12,16 +12,17 @@ public class LoadLevel : MonoBehaviour
     PAK DefaultCollection;
     Map objects;
     List<Transform> walls = new List<Transform>();
+    GameObject ground;
 
-    public string LevelName;
+    [Range(1,20)]
+    public int LevelNumber;
 
-    [Header("Debug")]
-    public Transform PlayerTransform;
 
     void Start()
     {
         DefaultCollection = Resources.Load<PAK>("PAK1");
         objects = new Map(DefaultCollection);
+        ground = BuildCurrentLevelGround(DefaultCollection.Ground);
 
         BuildLevel();
         Optimisation();
@@ -38,6 +39,16 @@ public class LoadLevel : MonoBehaviour
                 walls.Add(quad.GetComponent<Transform>());
             }
         }
+    }
+
+    GameObject BuildCurrentLevelGround(GameObject baseObject)
+    {
+        Material floor = Resources.Load<Material>($"Materials/FloorsMaterials/floortex{LevelNumber}");
+        Material ceiling = Resources.Load<Material>($"Materials/CeilingsMaterials/ceiltex{LevelNumber}");
+        var script = baseObject.GetComponent<BuildGround>();
+        script.SetMaterials(floor, ceiling);
+        DestroyImmediate(script);
+        return baseObject;
     }
 
     void Optimisation()
@@ -63,10 +74,10 @@ public class LoadLevel : MonoBehaviour
 
     void BuildLevel()
     {
-        var asset = Resources.Load<TextAsset>($"Levels/{LevelName}");
+        var asset = Resources.Load<TextAsset>($"Levels/game{LevelNumber}");
         var charArray = asset.text.ToCharArray();
 
-        var levelParent = new GameObject(LevelName);
+        var levelParent = new GameObject($"game{LevelNumber}");
 
         int i = 0;
         for (int y = 0; y < 66; y++)
@@ -83,6 +94,7 @@ public class LoadLevel : MonoBehaviour
                             case nextLine:
                                 break;
                             case emptySpace:
+                                CreateEntity(ground, -x, y, levelParent.transform, 1);
                                 break;
                             default:
                                 CreateEntity(newObject, -x, y, levelParent.transform, 1);

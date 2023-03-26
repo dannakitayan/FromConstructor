@@ -77,4 +77,6 @@ public class PAK : ScriptableObject
     public GameObject Door;
     [Header("Player")]
     public GameObject Player;
+    [Header("Ground")]
+    public GameObject Ground;
 }

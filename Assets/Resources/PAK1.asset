@@ -53,16 +53,16 @@ MonoBehaviour:
   Tex39: {fileID: 8092210076115523393, guid: b4feb45164bb1f044b05e99ef8e93b8c, type: 3}
   Tex40: {fileID: 1436461335821401282, guid: ad600246789c6ee46bde110c110c07b1, type: 3}
   NextLevel: {fileID: 4989581269892243, guid: ed44f6e14e2c55f4ca6145111ddea03d, type: 3}
-  Sprite1: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
-  Sprite2: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
-  Sprite3: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
-  Sprite4: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
-  Sprite5: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
-  Sprite6: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
-  Sprite7: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
-  Sprite8: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
-  Sprite9: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
-  Sprite10: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Sprite1: {fileID: 8859038584444820123, guid: 3075a7f536480bb428b6c6123c418ceb, type: 3}
+  Sprite2: {fileID: 2944552163385997029, guid: 504671d8f51846f41bfddfa9201cf9e6, type: 3}
+  Sprite3: {fileID: 5517281499771656123, guid: 98aea0793fe035c4aa1cfabf483fd663, type: 3}
+  Sprite4: {fileID: 9085871956622303766, guid: 1b3db888b52950649be2b9c5260e07e7, type: 3}
+  Sprite5: {fileID: 4340125764067940902, guid: 7fd1d8b36d121594f8fc766613d49522, type: 3}
+  Sprite6: {fileID: 6312801854556070650, guid: 5a52c106f81a23940a6905a69d2c2fb0, type: 3}
+  Sprite7: {fileID: 1490787480091661842, guid: 7b3bbe6dab525594fbf94bfdc078b47a, type: 3}
+  Sprite8: {fileID: 4992583366086518987, guid: a3b435c789c97ef4b9fd176790884792, type: 3}
+  Sprite9: {fileID: 4020101783029868069, guid: 46db470acfab2494c93da04bd19c6c60, type: 3}
+  Sprite10: {fileID: 4402889486700352297, guid: c2b1a6de7d7018940b86d06fa98fd257, type: 3}
   Weapon1: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
   Weapon2: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
   Weapon3: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
@@ -78,3 +78,4 @@ MonoBehaviour:
   Enemy5: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
   Door: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
   Player: {fileID: 2208117017591228712, guid: 60a01887fb88e3f4a8f91b8752592737, type: 3}
+  Ground: {fileID: 576877678018341924, guid: defffe6d9af87fb45a7bf2bba9e17790, type: 3}

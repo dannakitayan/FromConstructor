@@ -57,24 +57,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\WeaponManager\WeaponParameter.cs" />
-    <Compile Include="Assets\Shared\Scripts\SimpleCharacterMotor.cs" />
     <Compile Include="Assets\Scripts\WeaponManager\Weapons\Weapon3.cs" />
     <Compile Include="Assets\Scripts\LoadLevel\LoadLevel.cs" />
     <Compile Include="Assets\Scripts\MainHud\HitIndicator.cs" />
-    <Compile Include="Assets\Shared\Scripts\ProximityActivate.cs" />
     <Compile Include="Assets\Scripts\Grunt\PlayerParameters.cs" />
     <Compile Include="Assets\Scripts\MainHud\MainHud.cs" />
     <Compile Include="Assets\Scripts\LoadLevel\PAK.cs" />
+    <Compile Include="Assets\Scripts\Ground\BuildGround.cs" />
     <Compile Include="Assets\Scripts\LoadLevel\Map.cs" />
     <Compile Include="Assets\Scripts\WeaponManager\Weapons\Weapon1.cs" />
-    <Compile Include="Assets\Shared\Scripts\AdjustTimeScale.cs" />
     <Compile Include="Assets\Scripts\WeaponManager\MainCameraShake.cs" />
-    <Compile Include="Assets\GruntPrefab\Scripts\Grunt.cs" />
+    <Compile Include="Assets\Scripts\Player\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Barrel\ExplosionBarrel.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\Head.cs" />
     <Compile Include="Assets\Scripts\WeaponManager\DefaultWeapon.cs" />
-    <Compile Include="Assets\Shared\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\Grunt\PlayerSingleton.cs" />
     <Compile Include="Assets\Scripts\WeaponManager\WeaponManager.cs" />
     <Compile Include="Assets\Scripts\WeaponManager\Weapons.cs" />
@@ -88,6 +85,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Resources\Levels\game1.txt" />
     <None Include="Assets\Resources\Levels\game13.txt" />
+    <None Include="Assets\Shaders\TransparentYBillboard.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Shaders\DetailTexture.shader" />
     <None Include="Assets\Resources\Levels\game7.txt" />

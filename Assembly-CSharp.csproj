@@ -87,7 +87,7 @@
     <None Include="Assets\Resources\Levels\game13.txt" />
     <None Include="Assets\Shaders\TransparentYBillboard.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\Shaders\DetailTexture.shader" />
+    <None Include="Assets\Shaders\Outside.shader" />
     <None Include="Assets\Resources\Levels\game7.txt" />
     <None Include="Assets\Shaders\ReflectionGlass.shader" />
     <None Include="Assets\Resources\Levels\game15.txt" />
@@ -111,7 +111,6 @@
     <None Include="Assets\Resources\Levels\game20.txt" />
     <None Include="Assets\Resources\Levels\game2.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\Shaders\DetailTextureReflection.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Resources\Levels\game11.txt" />
     <None Include="Assets\Resources\Levels\game18.txt" />
@@ -119,6 +118,7 @@
     <None Include="Assets\Resources\Levels\game3.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Resources\Levels\game14.txt" />
+    <None Include="Assets\Shaders\Doom64Texture.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Resources\Levels\game19.txt" />
     <None Include="Assets\Shaders\QuakeLiquid.shader" />

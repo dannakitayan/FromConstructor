@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f83f615f00d4445afbacffc41e54e5, type: 3}
+  m_Name: Weapon5Setting
+  m_EditorClassIdentifier: 
+  CanShoot: 1
+  RepetitionSpeed: 3
+  Power: 8
+  StartAmmo: 4
+  MaxAmmo: 10
+  BulletsPerShot: 1
+  Sprites:
+  - {fileID: 2800000, guid: a202131011e937446a94a943ccfd1f90, type: 3}
+  - {fileID: 2800000, guid: 56d9621e772d4d64c8d6e0474bf8ea5a, type: 3}
+  - {fileID: 2800000, guid: a8c7559c853b4594b9686703e9c3d2f9, type: 3}
+  - {fileID: 2800000, guid: 678c888fa1f71fa4aa9112f6764fb173, type: 3}
+  - {fileID: 2800000, guid: a34504480086bc54daf049548b14ff04, type: 3}
+  Bullet: {fileID: 0}
+  Shot: {fileID: 8300000, guid: f0f9290eca598c14d9062bb4f990e680, type: 3}
+  Empty: {fileID: 0}

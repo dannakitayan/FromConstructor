@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f83f615f00d4445afbacffc41e54e5, type: 3}
+  m_Name: Weapon4Setting
+  m_EditorClassIdentifier: 
+  CanShoot: 1
+  RepetitionSpeed: 1
+  Power: 4
+  StartAmmo: 25
+  MaxAmmo: 25
+  BulletsPerShot: 1
+  Sprites:
+  - {fileID: 2800000, guid: 29aa78436ff40d4459cea5e2d1ab5e7c, type: 3}
+  - {fileID: 2800000, guid: d5894f26d97a29448bc55bd5c8803e7a, type: 3}
+  - {fileID: 2800000, guid: 7593f2615ea759c4aa95eb00430013d9, type: 3}
+  - {fileID: 2800000, guid: 685dd8537f49a32498a350d1e92cdb10, type: 3}
+  - {fileID: 2800000, guid: aa9599e1b97e5464b8e63cec543d3cff, type: 3}
+  Bullet: {fileID: 0}
+  Shot: {fileID: 8300000, guid: 597c25c1c2395264ba24c6d7ea4681e4, type: 3}
+  Empty: {fileID: 0}

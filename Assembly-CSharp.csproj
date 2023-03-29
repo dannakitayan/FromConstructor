@@ -56,8 +56,6 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\WeaponManager\WeaponParameter.cs" />
-    <Compile Include="Assets\Scripts\WeaponManager\Weapons\Weapon3.cs" />
     <Compile Include="Assets\Scripts\LoadLevel\LoadLevel.cs" />
     <Compile Include="Assets\Scripts\MainHud\HitIndicator.cs" />
     <Compile Include="Assets\Scripts\Grunt\PlayerParameters.cs" />
@@ -65,7 +63,6 @@
     <Compile Include="Assets\Scripts\LoadLevel\PAK.cs" />
     <Compile Include="Assets\Scripts\Ground\BuildGround.cs" />
     <Compile Include="Assets\Scripts\LoadLevel\Map.cs" />
-    <Compile Include="Assets\Scripts\WeaponManager\Weapons\Weapon1.cs" />
     <Compile Include="Assets\Scripts\WeaponManager\MainCameraShake.cs" />
     <Compile Include="Assets\Scripts\Player\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Barrel\ExplosionBarrel.cs" />
@@ -77,6 +74,7 @@
     <Compile Include="Assets\Scripts\WeaponManager\Weapons.cs" />
     <Compile Include="Assets\Scripts\Barrel\LiquidDamage.cs" />
     <Compile Include="Assets\Scripts\Items\TakeItem.cs" />
+    <Compile Include="Assets\Scripts\WeaponManager\WeaponSetting.cs" />
     <Compile Include="Assets\Scripts\Items\TakeWeapon.cs" />
   </ItemGroup>
   <ItemGroup>

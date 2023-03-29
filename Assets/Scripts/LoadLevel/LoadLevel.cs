@@ -47,7 +47,6 @@ public class LoadLevel : MonoBehaviour
         Material ceiling = Resources.Load<Material>($"Materials/CeilingsMaterials/ceiltex{LevelNumber}");
         var script = baseObject.GetComponent<BuildGround>();
         script.SetMaterials(floor, ceiling);
-        DestroyImmediate(script);
         return baseObject;
     }
 
@@ -94,7 +93,6 @@ public class LoadLevel : MonoBehaviour
                             case nextLine:
                                 break;
                             case emptySpace:
-                                CreateEntity(ground, -x, y, levelParent.transform, 1);
                                 break;
                             default:
                                 CreateEntity(newObject, -x, y, levelParent.transform, 1);
@@ -106,5 +104,7 @@ public class LoadLevel : MonoBehaviour
                 i += 1;
             }
         }
+
+        CreateEntity(ground, 0, 0, levelParent.transform, 1);
     }
 }

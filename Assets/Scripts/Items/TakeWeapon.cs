@@ -3,7 +3,6 @@ using UnityEngine;
 public class TakeWeapon : MonoBehaviour
 {
     public Weapons Weapon;
-    public WeaponParameter Parameter;
     public AudioClip TakeSound;
 
     void OnTriggerEnter(Collider other)

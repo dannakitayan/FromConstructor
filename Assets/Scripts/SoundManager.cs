@@ -5,29 +5,26 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField]
-    AudioSource playerSource;
-    [SerializeField]
-    AudioSource weaponSource;
-    [SerializeField]
-    AudioSource explosionSource;
+    [SerializeField] AudioSource playerSource;
+    [SerializeField] AudioSource weaponSource;
+    [SerializeField] AudioSource itemSource;
 
     void OnEnable()
     {
         onWeaponPlay += WeaponPlay;
         onPlayerPlay += PlayerPlay;
-        onExplosionPlay += ExplosionPlay;
+        onItemPlay += ItemPlay;
     }
     void OnDisable()
     {
         onWeaponPlay -= WeaponPlay;
         onPlayerPlay -= PlayerPlay;
-        onExplosionPlay -= ExplosionPlay;
+        onItemPlay -= ItemPlay;
     }
 
     public static Action<AudioClip> onWeaponPlay;
     public static Action<AudioClip> onPlayerPlay;
-    public static Action onExplosionPlay;
+    public static Action<AudioClip> onItemPlay;
 
 
     void WeaponPlay(AudioClip sound)
@@ -40,8 +37,8 @@ public class SoundManager : MonoBehaviour
         playerSource.PlayOneShot(sound);
     }
 
-    void ExplosionPlay()
+    void ItemPlay(AudioClip sound)
     {
-        explosionSource.Play();
+        itemSource.PlayOneShot(sound);
     }
 }

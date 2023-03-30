@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5fabcf39c0252488cb7e7a170360ae, type: 3}
+  m_Name: Sprite8
+  m_EditorClassIdentifier: 
+  Endurance: 1
+  IsSolid: 1
+  Sound: {fileID: 0}
+  Sprites:
+  - {fileID: 2800000, guid: ef081c24a32ee0241a48da1992a449e6, type: 3}
+  - {fileID: 2800000, guid: a548366d2afb50d4fb08a9417e33ff05, type: 3}
+  - {fileID: 2800000, guid: 48e692059f520dd4aa4bd565afc2033f, type: 3}
+  - {fileID: 2800000, guid: b5a66878356cc3c4abec40f4870ef590, type: 3}
+  - {fileID: 2800000, guid: 62b0515835daf4e4cb5c7b3074525326, type: 3}

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 207074941}
   - component: {fileID: 207074942}
   m_Layer: 0
-  m_Name: WeaponsSounds
+  m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 412039774}
   - component: {fileID: 412039775}
   m_Layer: 0
-  m_Name: PlayerSounds
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -827,7 +827,83 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSource: {fileID: 412039775}
   weaponSource: {fileID: 207074942}
-  explosionSource: {fileID: 1660600691}
+  itemSource: {fileID: 1660600691}
+--- !u!1 &788772672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 788772675}
+  - component: {fileID: 788772674}
+  - component: {fileID: 788772673}
+  m_Layer: 5
+  m_Name: Key
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &788772673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788772672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 976a8948d9ec94746aae61a52da2fd75, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &788772674
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788772672}
+  m_CullTransparentMesh: 1
+--- !u!224 &788772675
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788772672}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1918172752}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 159.73352, y: 0.15641022}
+  m_SizeDelta: {x: 47.711, y: 47.711}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1099989904
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,6 +1080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ammo: {fileID: 1538356508}
   Health: {fileID: 474285035}
+  keyIcon: {fileID: 788772672}
 --- !u!1 &1296204241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,7 +1339,7 @@ GameObject:
   - component: {fileID: 1660600690}
   - component: {fileID: 1660600691}
   m_Layer: 0
-  m_Name: ExplosionSounds
+  m_Name: Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1412,6 +1489,7 @@ RectTransform:
   - {fileID: 1538356507}
   - {fileID: 474285034}
   - {fileID: 655606504}
+  - {fileID: 788772675}
   m_Father: {fileID: 1264141075}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

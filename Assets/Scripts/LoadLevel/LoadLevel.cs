@@ -13,6 +13,7 @@ public class LoadLevel : MonoBehaviour
     Map objects;
     List<Transform> walls = new List<Transform>();
     GameObject ground;
+    GameObject door;
 
     [Range(1,20)]
     public int LevelNumber;
@@ -22,16 +23,26 @@ public class LoadLevel : MonoBehaviour
     {
         DefaultCollection = Resources.Load<PAK>("PAK1");
         objects = new Map(DefaultCollection);
-        ground = BuildCurrentLevelGround(DefaultCollection.Ground);
+        ground = BuildCurrentLevelObject(DefaultCollection.Ground, GetMaterialsFromFolder("Materials/FloorsMaterials/floortex", "Materials/CeilingsMaterials/ceiltex"));
+        door = BuildCurrentLevelObject(DefaultCollection.Door, GetMaterialsFromFolder("Materials/Doors/Default/doortex"));
 
         BuildLevel();
         Optimisation();
     }
 
-    void CreateEntity(GameObject newObject, int x, int y, Transform parent, int height = 0)
+    void CreateEntity(GameObject newObject, int x, int y, Transform parent, int height = 0, bool rotate = false)
     {
-        var entity = GameObject.Instantiate(newObject, new Vector3(x * step, height, y * step), Quaternion.identity, parent);
-        if(height == 1)
+        GameObject entity = null;
+        switch (rotate)
+        {
+            case false:
+                entity = GameObject.Instantiate(newObject, new Vector3(x * step, height, y * step), Quaternion.identity, parent);
+                break;
+            case true:
+                entity = GameObject.Instantiate(newObject, new Vector3(x * step, height, y * step), Quaternion.Euler(0, 90, 0), parent);
+                break;
+        }
+        if (height == 1)
         {
             var quads = entity.GetComponentsInChildren<MeshFilter>();
             foreach(var quad in quads)
@@ -41,12 +52,24 @@ public class LoadLevel : MonoBehaviour
         }
     }
 
-    GameObject BuildCurrentLevelGround(GameObject baseObject)
+    (Material, Material) GetMaterialsFromFolder(string material1, string material2)
     {
-        Material floor = Resources.Load<Material>($"Materials/FloorsMaterials/floortex{LevelNumber}");
-        Material ceiling = Resources.Load<Material>($"Materials/CeilingsMaterials/ceiltex{LevelNumber}");
-        var script = baseObject.GetComponent<BuildGround>();
-        script.SetMaterials(floor, ceiling);
+        Material firstMaterial = Resources.Load<Material>($"{material1}{LevelNumber}");
+        Material secondMaterial = Resources.Load<Material>($"{material2}{LevelNumber}");
+        return (firstMaterial, secondMaterial);
+    }
+
+    (Material, Material) GetMaterialsFromFolder(string material1)
+    {
+        Material firstMaterial = Resources.Load<Material>($"{material1}{LevelNumber}");
+        Material secondMaterial = Resources.Load<Material>($"Materials/Doors/Doorways/doorway1");
+        return (firstMaterial, secondMaterial);
+    }
+
+    GameObject BuildCurrentLevelObject(GameObject baseObject, (Material, Material) materials)
+    {
+        var script = baseObject.GetComponent<BuildTexturesForPrefab>();
+        script.SetMaterials(materials.Item1, materials.Item2);
         return baseObject;
     }
 
@@ -71,6 +94,18 @@ public class LoadLevel : MonoBehaviour
         walls.Clear();
     }
 
+    void BuildDoor(GameObject objectToSpawn, int x, int y, Transform parent, char symbol)
+    {
+        if (symbol != emptySpace)
+        {
+            CreateEntity(objectToSpawn, x, y, parent, 1);
+        }
+        else
+        {
+            CreateEntity(objectToSpawn, x, y, parent, 1, true);
+        }
+    }
+
     void BuildLevel()
     {
         var asset = Resources.Load<TextAsset>($"Levels/game{LevelNumber}");
@@ -93,6 +128,12 @@ public class LoadLevel : MonoBehaviour
                             case nextLine:
                                 break;
                             case emptySpace:
+                                break;
+                            case '8':
+                                BuildDoor(door, -x, y, levelParent.transform, charArray[i - 1]);
+                                break;
+                            case '9':
+                                BuildDoor(newObject, -x, y, levelParent.transform, charArray[i - 1]);
                                 break;
                             default:
                                 CreateEntity(newObject, -x, y, levelParent.transform, 1);

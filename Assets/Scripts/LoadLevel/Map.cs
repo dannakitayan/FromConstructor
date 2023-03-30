@@ -68,6 +68,8 @@ public class Map
 
         'X' => rgm.AmmoBox,
         'W' => rgm.Medkit,
+        'Y' => rgm.Key,
+
         '9' => rgm.NextLevel,
 
         'Q' => rgm.Weapon1,

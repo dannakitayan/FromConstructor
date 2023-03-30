@@ -44,8 +44,12 @@ public class PAK : ScriptableObject
     public GameObject Tex38;
     public GameObject Tex39;
     public GameObject Tex40;
+    [Header("Door")]
+    public GameObject Door;
     [Header("Next level")]
     public GameObject NextLevel;
+    [Header("Ground")]
+    public GameObject Ground;
     [Header("Sprites")]
     public GameObject Sprite1;
     public GameObject Sprite2;
@@ -64,19 +68,16 @@ public class PAK : ScriptableObject
     public GameObject Weapon4;
     public GameObject Weapon5;
     public GameObject Weapon6;
-    [Header("Ammunitions")]
+    [Header("Items")]
     public GameObject AmmoBox;
     public GameObject Medkit;
+    public GameObject Key;
     [Header("Enemies")]
     public GameObject Enemy1;
     public GameObject Enemy2;
     public GameObject Enemy3;
     public GameObject Enemy4;
     public GameObject Enemy5;
-    [Header("Door")]
-    public GameObject Door;
     [Header("Player")]
     public GameObject Player;
-    [Header("Ground")]
-    public GameObject Ground;
 }

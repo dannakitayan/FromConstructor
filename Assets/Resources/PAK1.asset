@@ -52,7 +52,9 @@ MonoBehaviour:
   Tex38: {fileID: 7256680452595137172, guid: 820a29e0b25a890478f5f92dcd5eaf31, type: 3}
   Tex39: {fileID: 8092210076115523393, guid: b4feb45164bb1f044b05e99ef8e93b8c, type: 3}
   Tex40: {fileID: 1436461335821401282, guid: ad600246789c6ee46bde110c110c07b1, type: 3}
-  NextLevel: {fileID: 4989581269892243, guid: ed44f6e14e2c55f4ca6145111ddea03d, type: 3}
+  Door: {fileID: 1059718145521564931, guid: 67b8d725fcbc64f44b9e86bee1067b89, type: 3}
+  NextLevel: {fileID: 6065383186554681555, guid: 51f3c54650d751b44957359f2ed3f3a4, type: 3}
+  Ground: {fileID: 576877678018341924, guid: defffe6d9af87fb45a7bf2bba9e17790, type: 3}
   Sprite1: {fileID: 8859038584444820123, guid: 3075a7f536480bb428b6c6123c418ceb, type: 3}
   Sprite2: {fileID: 2944552163385997029, guid: 504671d8f51846f41bfddfa9201cf9e6, type: 3}
   Sprite3: {fileID: 5517281499771656123, guid: 98aea0793fe035c4aa1cfabf483fd663, type: 3}
@@ -63,19 +65,18 @@ MonoBehaviour:
   Sprite8: {fileID: 4992583366086518987, guid: a3b435c789c97ef4b9fd176790884792, type: 3}
   Sprite9: {fileID: 4020101783029868069, guid: 46db470acfab2494c93da04bd19c6c60, type: 3}
   Sprite10: {fileID: 4402889486700352297, guid: c2b1a6de7d7018940b86d06fa98fd257, type: 3}
-  Weapon1: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
-  Weapon2: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
-  Weapon3: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
-  Weapon4: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
-  Weapon5: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
-  Weapon6: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
+  Weapon1: {fileID: 7697463529734415020, guid: 8746cb5e7506cc74e864769cbf482b73, type: 3}
+  Weapon2: {fileID: 190410918340521699, guid: 8bbbc3a53eef9bd4e9be066d88853d26, type: 3}
+  Weapon3: {fileID: 830419609597351065, guid: 01629a55e515c5649a27313501c0ef84, type: 3}
+  Weapon4: {fileID: 8253691672105582496, guid: 75b21a7013593234ab0c4dc863b87e5f, type: 3}
+  Weapon5: {fileID: 230167052717515152, guid: 9a21c18b72779dd40921b2ce57525d2b, type: 3}
+  Weapon6: {fileID: 8651384129397189918, guid: c506c3a088f9117459cac632e021ae28, type: 3}
   AmmoBox: {fileID: 472684027127623304, guid: 10c0d53fd597d154aab2dcf2304fd85b, type: 3}
-  Medkit: {fileID: 4251413827248096542, guid: e583247b4b708304680b8dfa49f3fb53, type: 3}
+  Medkit: {fileID: 7600239148210289292, guid: 3bbb67d736e653440b0554f953521c79, type: 3}
+  Key: {fileID: 4701262538979657537, guid: c0e02c73bafdc124691e7c9d77d01684, type: 3}
   Enemy1: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
   Enemy2: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
   Enemy3: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
   Enemy4: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
   Enemy5: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
-  Door: {fileID: 5869072260072174514, guid: 6e21f2d7fd843a742b3fde2617f13571, type: 3}
   Player: {fileID: 2208117017591228712, guid: 60a01887fb88e3f4a8f91b8752592737, type: 3}
-  Ground: {fileID: 576877678018341924, guid: defffe6d9af87fb45a7bf2bba9e17790, type: 3}

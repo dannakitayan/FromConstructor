@@ -8,20 +8,24 @@ public class MainHud : MonoBehaviour
 {
     public TMP_Text Ammo;
     public TMP_Text Health;
+    [SerializeField] GameObject keyIcon;
 
     public static Action<string> onHealthSet;
     public static Action<string> onAmmoSet;
+    public static Action onGetKey;
 
     void OnEnable()
     {
         onAmmoSet += AmmoSet;
         onHealthSet += HealthSet;
+        onGetKey += KeyIconShow;
     }
 
     void OnDisable()
     {
         onAmmoSet -= AmmoSet;
         onHealthSet -= HealthSet;
+        onGetKey -= KeyIconShow;
     }
 
     void HealthSet(string text)
@@ -32,5 +36,10 @@ public class MainHud : MonoBehaviour
     void AmmoSet(string text)
     {
         Ammo.text = text;
+    }
+
+    void KeyIconShow()
+    {
+        keyIcon.SetActive(true);
     }
 }

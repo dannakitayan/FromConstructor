@@ -56,78 +56,79 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Biilboard\Billboard.cs" />
+    <Compile Include="Assets\Scripts\Settings\ItemSetting.cs" />
     <Compile Include="Assets\Scripts\LoadLevel\LoadLevel.cs" />
+    <Compile Include="Assets\Scripts\Sprites\PropState.cs" />
     <Compile Include="Assets\Scripts\MainHud\HitIndicator.cs" />
     <Compile Include="Assets\Scripts\Parameters\PlayerParameters.cs" />
     <Compile Include="Assets\Scripts\MainHud\MainHud.cs" />
+    <Compile Include="Assets\Scripts\Doors\DoorSpawnRotation.cs" />
     <Compile Include="Assets\Scripts\LoadLevel\PAK.cs" />
     <Compile Include="Assets\Scripts\Ground\BuildTexturesForPrefab.cs" />
     <Compile Include="Assets\Scripts\LoadLevel\Map.cs" />
+    <Compile Include="Assets\Scripts\Sprites\Prop.cs" />
     <Compile Include="Assets\Scripts\Weapons\MainCameraShake.cs" />
     <Compile Include="Assets\Scripts\Player\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\Items\ItemsType.cs" />
     <Compile Include="Assets\Scripts\Enemies\Head.cs" />
     <Compile Include="Assets\Scripts\Weapons\DefaultWeapon.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponManager.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapons.cs" />
+    <Compile Include="Assets\Scripts\ResourcesLoader\ResourcesLoader.cs" />
+    <Compile Include="Assets\Scripts\Settings\SpriteSetting.cs" />
     <Compile Include="Assets\Scripts\Items\TakeItem.cs" />
     <Compile Include="Assets\Scripts\Settings\WeaponSetting.cs" />
-    <Compile Include="Assets\Scripts\Biilboard\Billboard.cs" />
-    <Compile Include="Assets\Scripts\Settings\ItemSetting.cs" />
-    <Compile Include="Assets\Scripts\Items\ItemsType.cs" />
-    <Compile Include="Assets\Scripts\Settings\SpriteSetting.cs" />
-    <Compile Include="Assets\Scripts\Sprites\Prop.cs" />
-    <Compile Include="Assets\Scripts\Sprites\PropState.cs" />
-    <Compile Include="Assets\Scripts\Doors\DoorSpawnRotation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Resources\Levels\game12.txt" />
+    <None Include="Assets\GameResources\Levels\game12.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\Resources\Levels\game1.txt" />
-    <None Include="Assets\Resources\Levels\game13.txt" />
+    <None Include="Assets\GameResources\Levels\game1.txt" />
+    <None Include="Assets\GameResources\Levels\game13.txt" />
     <None Include="Assets\Shaders\TransparentYBillboard.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Shaders\Outside.shader" />
-    <None Include="Assets\Resources\Levels\game7.txt" />
+    <None Include="Assets\GameResources\Levels\game7.txt" />
     <None Include="Assets\Shaders\ReflectionGlass.shader" />
-    <None Include="Assets\Resources\Levels\game15.txt" />
-    <None Include="Assets\Resources\Levels\game9.txt" />
+    <None Include="Assets\GameResources\Levels\game15.txt" />
+    <None Include="Assets\GameResources\Levels\game9.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Shaders\ScrollingTexture.shader" />
-    <None Include="Assets\Resources\Levels\game17.txt" />
+    <None Include="Assets\GameResources\Levels\game17.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Resources\Levels\game8.txt" />
-    <None Include="Assets\Resources\Levels\game4.txt" />
-    <None Include="Assets\Resources\Levels\game6.txt" />
+    <None Include="Assets\GameResources\Levels\game8.txt" />
+    <None Include="Assets\GameResources\Levels\game4.txt" />
+    <None Include="Assets\GameResources\Levels\game6.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\Resources\Levels\game16.txt" />
+    <None Include="Assets\GameResources\Levels\game16.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\Resources\Levels\game20.txt" />
-    <None Include="Assets\Resources\Levels\game2.txt" />
+    <None Include="Assets\GameResources\Levels\game20.txt" />
+    <None Include="Assets\GameResources\Levels\game2.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\Resources\Levels\game11.txt" />
-    <None Include="Assets\Resources\Levels\game18.txt" />
+    <None Include="Assets\GameResources\Levels\game11.txt" />
+    <None Include="Assets\GameResources\Levels\game18.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\Resources\Levels\game3.txt" />
+    <None Include="Assets\GameResources\Levels\game3.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\Resources\Levels\game14.txt" />
+    <None Include="Assets\GameResources\Levels\game14.txt" />
     <None Include="Assets\Shaders\Doom64Texture.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\Resources\Levels\game19.txt" />
+    <None Include="Assets\GameResources\Levels\game19.txt" />
     <None Include="Assets\Shaders\QuakeLiquid.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\Resources\Levels\game10.txt" />
+    <None Include="Assets\GameResources\Levels\game10.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\Resources\Levels\game5.txt" />
+    <None Include="Assets\GameResources\Levels\game5.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -745,23 +746,20 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Services.Core.Analytics">
-      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.CacheServer">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.CacheServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Services.Core.Environments">
-      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -771,6 +769,9 @@
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -786,6 +787,24 @@
     </Reference>
     <Reference Include="Unity.Services.Core">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Analytics">
+      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Environments">
+      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

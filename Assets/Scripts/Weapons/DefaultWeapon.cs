@@ -32,11 +32,12 @@ public class DefaultWeapon : MonoBehaviour
             MainHud.onAmmoSet?.Invoke(currentAmmo.ToString());
         }
     }
-    public bool CanSeeTheWeapon
+
+    public Weapons WeaponType
     {
         get
         {
-            return currentAmmo > 0;
+            return weaponSetting.WeaponType;
         }
     }
 
@@ -47,7 +48,10 @@ public class DefaultWeapon : MonoBehaviour
 
     void Start()
     {
-        currentAmmo = weaponSetting.StartAmmo;
+        currentAmmo = PlayerParameters.LoadAmmoCluster(weaponSetting.WeaponType);
+        Debug.Log(currentAmmo);
+        if (currentAmmo == -1) currentAmmo = weaponSetting.StartAmmo;
+        Debug.Log(currentAmmo);
         MainHud.onAmmoSet(currentAmmo.ToString());
     }
 

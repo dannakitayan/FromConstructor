@@ -5,43 +5,38 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    [Header("Weapons")]
-    [SerializeField] DefaultWeapon weapon1;
-    [SerializeField] DefaultWeapon weapon2;
-    [SerializeField] DefaultWeapon weapon3;
-    [SerializeField] DefaultWeapon weapon4;
-    [SerializeField] DefaultWeapon weapon5;
-    [SerializeField] DefaultWeapon weapon6;
-    [Header("Start level with a weapon")]
-    public Weapons StartWith;
+    [SerializeField] DefaultWeapon[] weapons;
 
     public static Action onShot;
     public static Action<Weapons> onChange;
     public static Action<int> onAmmoAdd;
+    //Save\Load;
+    public static Action onSaveWeaponsState;
+    public static Action onLoadWeaponsState;
+
     public static bool isShooting = false;
 
     private void Start()
     {
-        if (StartWith == Weapons.NULL) return;
-        PlayerParameters.AddWeapon(StartWith);
-        SetWeapon(StartWith);
+        SetWeaponOnStart(PlayerParameters.CurrentWeapon);
     }
 
     void Awake()
     {
         onChange += SetWeapon;
         onAmmoAdd += AddAmmo;
+        onSaveWeaponsState += SaveWeaponsState;
     }
 
     void OnDestroy()
     {
         onChange -= SetWeapon;
         onAmmoAdd -= AddAmmo;
+        onSaveWeaponsState -= SaveWeaponsState;
     }
 
     void DisableAll()
     {
-        var weapons = new DefaultWeapon[] { weapon1, weapon2, weapon3, weapon4, weapon5, weapon6};
         foreach(var element in weapons)
         {
             if(element is not null)
@@ -51,30 +46,59 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
+    void SetWeaponOnStart(Weapons weapon)
+    {
+        switch (weapon)
+        {
+            case Weapons.Weapon1:
+                weapons[0].gameObject.SetActive(true);
+                break;
+            case Weapons.Weapon2:
+                weapons[1].gameObject.SetActive(true);
+                break;
+            case Weapons.Weapon3:
+                weapons[2].gameObject.SetActive(true);
+                break;
+            case Weapons.Weapon4:
+                weapons[3].gameObject.SetActive(true);
+                break;
+            case Weapons.Weapon5:
+                weapons[4].gameObject.SetActive(true);
+                break;
+            case Weapons.Weapon6:
+                weapons[5].gameObject.SetActive(true);
+                break;
+        }
+
+        PlayerParameters.CurrentWeapon = weapon;
+    }
+
     void SetWeapon(Weapons weapon)
     {
-        if (isShooting || !PlayerParameters.HaveWeapon(weapon) || PlayerParameters.CurrentWeapon == weapon) return;
+        if (isShooting 
+            || !PlayerParameters.HaveWeapon(weapon) 
+            || PlayerParameters.CurrentWeapon == weapon) return;
 
         DisableAll();
         switch (weapon)
         {
             case Weapons.Weapon1:
-                weapon1.gameObject.SetActive(true);
+                weapons[0].gameObject.SetActive(true);
                 break;
             case Weapons.Weapon2:
-                weapon2.gameObject.SetActive(true);
+                weapons[1].gameObject.SetActive(true);
                 break;
             case Weapons.Weapon3:
-                weapon3.gameObject.SetActive(true);
+                weapons[2].gameObject.SetActive(true);
                 break;
             case Weapons.Weapon4:
-                weapon4.gameObject.SetActive(true);
+                weapons[3].gameObject.SetActive(true);
                 break;
             case Weapons.Weapon5:
-                weapon5.gameObject.SetActive(true);
+                weapons[4].gameObject.SetActive(true);
                 break;
             case Weapons.Weapon6:
-                weapon6.gameObject.SetActive(true);
+                weapons[5].gameObject.SetActive(true);
                 break;
         }
 
@@ -83,26 +107,52 @@ public class WeaponManager : MonoBehaviour
 
     void AddAmmo(int value)
     {
+        if(PlayerParameters.CurrentWeapon == Weapons.NULL) return;
         switch (PlayerParameters.CurrentWeapon)
         {
             case Weapons.Weapon1:
-                weapon1.CurrentAmmo += value;
+                weapons[0].CurrentAmmo += value;
                 break;
             case Weapons.Weapon2:
-                weapon2.CurrentAmmo += value;
+                weapons[1].CurrentAmmo += value;
                 break;
             case Weapons.Weapon3:
-                weapon3.CurrentAmmo += value;
+                weapons[2].CurrentAmmo += value;
                 break;
             case Weapons.Weapon4:
-                weapon4.CurrentAmmo += value;
+                weapons[3].CurrentAmmo += value;
                 break;
             case Weapons.Weapon5:
-                weapon5.CurrentAmmo += value;
+                weapons[4].CurrentAmmo += value;
                 break;
             case Weapons.Weapon6:
-                weapon6.CurrentAmmo += value;
+                weapons[5].CurrentAmmo += value;
                 break;
+        }
+    }
+
+    void SaveWeaponsState()
+    {
+        foreach (var element in weapons)
+        {
+            PlayerParameters.UpdateWeaponCluster(element.WeaponType, element.CurrentAmmo);
+        }
+    }
+
+    //Remove in the other script;
+    void Interaction()
+    {
+        int num = 2;
+        num = ~num;
+        RaycastHit hitInfo;
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, /*weaponParameter.Range*/ 5, num) && hitInfo.collider != null)
+        {
+            //Debug.Log(hitInfo.collider.tag);
+            if (hitInfo.collider.tag == "NextLevel")
+            {
+                SaveWeaponsState();
+                LoadLevel.onNextLevelLoad?.Invoke();
+            }
         }
     }
 
@@ -111,6 +161,11 @@ public class WeaponManager : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             onShot?.Invoke();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Interaction();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))

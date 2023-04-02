@@ -24,7 +24,6 @@ public class Prop : MonoBehaviour
         {
             if (spriteSetting.Endurance == 0 || isHitting) return;
             health -= Mathf.Abs(value); //To avoid healing the object;
-            Debug.Log(health);
             TakeDamage();
         }
     }

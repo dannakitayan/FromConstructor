@@ -31,4 +31,6 @@ public class WeaponSetting : ScriptableObject
     [Header("Sounds")]
     public AudioClip Shot;
     public AudioClip Empty;
+    [Header("Weapon type")]
+    public Weapons WeaponType;
 }

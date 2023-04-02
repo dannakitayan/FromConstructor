@@ -27,3 +27,4 @@ MonoBehaviour:
   Bullet: {fileID: 0}
   Shot: {fileID: 8300000, guid: f0f9290eca598c14d9062bb4f990e680, type: 3}
   Empty: {fileID: 0}
+  WeaponType: 5

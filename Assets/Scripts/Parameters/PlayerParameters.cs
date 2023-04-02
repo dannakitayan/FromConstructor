@@ -5,7 +5,7 @@ using System;
 using System.Linq;
 
 [Serializable]
-public struct PlayerCluster
+public class PlayerCluster
 {
     public Dictionary<Weapons, int> WeaponsInBag;
     public Weapons CurrentWeapon;
@@ -13,6 +13,13 @@ public struct PlayerCluster
     public Transform PlayerPosition;
     public Quaternion PlayerRotation;
     public Quaternion HeadRotation;
+
+    public PlayerCluster()
+    {
+        CurrentWeapon = Weapons.NULL;
+        WeaponsInBag = new Dictionary<Weapons, int>();
+        Health = 100;
+    }
 }
 
 public static class PlayerParameters
@@ -95,6 +102,25 @@ public static class PlayerParameters
     public static void AddWeapon(Weapons weapon)
     {
         CheckTheDictionary();
-        player.WeaponsInBag.Add(weapon, 0);
+        player.WeaponsInBag.Add(weapon, -1);
+    }
+
+    //Save\Load;
+    public static void SetPlayerParameters(PlayerCluster cluster)
+    {
+        player = cluster;
+    }
+
+    public static void UpdateWeaponCluster(Weapons weapon, int ammo)
+    {
+        if (!HaveWeapon(weapon)) return;
+        Debug.Log($"{weapon}, {ammo}");
+        player.WeaponsInBag[weapon] = ammo;
+    }
+
+    public static int LoadAmmoCluster(Weapons weapon)
+    {
+        player.WeaponsInBag.TryGetValue(weapon, out int value);
+        return value;
     }
 }

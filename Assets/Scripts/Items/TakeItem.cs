@@ -80,6 +80,11 @@ public class TakeItem : MonoBehaviour
         Weapons weapon = GetWeaponFromItem(item);
 
         if (weapon == Weapons.NULL) return;
+        if(PlayerParameters.HaveWeapon(weapon))
+        {
+            TakeAmmo();
+            return;
+        }
 
         PlayerParameters.AddWeapon(weapon);
         WeaponManager.onChange?.Invoke(weapon);

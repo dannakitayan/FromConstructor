@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: tex19
-  m_Shader: {fileID: 4800000, guid: e2b1891d24bc6374496c2072d3319914, type: 3}
+  m_Shader: {fileID: 4800000, guid: 1e93f8ea3192f0142aa0ba782bf775b0, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -45,7 +45,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 8900000, guid: 06433e9354d52f843a9403779f6fdf58, type: 2}
+        m_Texture: {fileID: 2800000, guid: 0ffe36f686c428e4fa068461fc99ab36, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -79,6 +79,8 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+    - _BottomColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _TopColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

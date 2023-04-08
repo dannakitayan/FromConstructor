@@ -49,9 +49,7 @@ public class DefaultWeapon : MonoBehaviour
     void Start()
     {
         currentAmmo = PlayerParameters.LoadAmmoCluster(weaponSetting.WeaponType);
-        Debug.Log(currentAmmo);
         if (currentAmmo == -1) currentAmmo = weaponSetting.StartAmmo;
-        Debug.Log(currentAmmo);
         MainHud.onAmmoSet(currentAmmo.ToString());
     }
 
@@ -74,10 +72,15 @@ public class DefaultWeapon : MonoBehaviour
 		RaycastHit hitInfo;
 		if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, /*weaponParameter.Range*/ 10, num) && hitInfo.collider != null)
 		{
-            Prop prop = hitInfo.collider.GetComponent<Prop>();
-            if (prop != null)
+            switch(hitInfo.collider.tag)
             {
-                prop.Health = weaponSetting.Power;
+                case "Prop":
+                    Debug.Log("Hit");
+                    hitInfo.collider.GetComponent<Prop>().Health = weaponSetting.Power;
+                    break;
+                case "Enemy":
+                    hitInfo.collider.GetComponent<EnemyDefault>().Health = weaponSetting.Power;
+                    break;
             }
         }
 	}

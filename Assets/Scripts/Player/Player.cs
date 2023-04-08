@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -19,16 +19,28 @@ public class Player : MonoBehaviour
 	//The player character controller;
 	CharacterController controller;
 
-	//Amounts of rotate position by axis; Величина поворота позиции по оси;
+	//Amounts of rotate position by axis;
 	float rotateAmountX;
 	float rotateAmountY;
 
-	//The vector created for movement; Вектор созданный для перемещения;
+	//The vector created for movement; 
 	Vector3 moveVector;
 
-	void Start()
+	public static Func<Vector3> onPositionGet;
+
+    void Awake()
+    {
+		onPositionGet += GetPlayerPosition;
+	}
+
+    void OnDestroy()
+    {
+		onPositionGet -= GetPlayerPosition;
+	}
+
+    void Start()
 	{
-		//The CharacterController initialisation; Инициализация CharacterController;
+		//The CharacterController initialisation; 
 		controller = GetComponent<CharacterController>();
 		CursorLock(true);
 	}
@@ -75,6 +87,11 @@ public class Player : MonoBehaviour
 		moveVector.z = Input.GetAxis("Vertical") * speed;
 		moveVector = transform.TransformDirection(moveVector);
 	}
+
+	Vector3 GetPlayerPosition()
+    {
+		return transform.position;
+    }
 
 	void Update()
 	{

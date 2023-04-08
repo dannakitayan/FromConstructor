@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: e50770f36aa3df84899934260b3d74ca, type: 2}
   m_HaloStrength: 0.826
   m_FlareStrength: 0.818
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.6
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.2
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -1261,7 +1261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606c7988eb2559c4c8c59e2f845d9dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelNumber: 0
+  defaultCollection: {fileID: 11400000, guid: 603fbda1c216f9b4a9c75b1ac7c03df0, type: 2}
+  LevelNumber: 1
 --- !u!1 &1399703281
 GameObject:
   m_ObjectHideFlags: 0

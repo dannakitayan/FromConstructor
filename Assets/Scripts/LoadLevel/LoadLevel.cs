@@ -6,20 +6,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class LoadLevel : MonoBehaviour
 {
     const int step = 2;
     const char nextLine = '\n';
     const char emptySpace = 'x';
     TextAsset levelAsset;
-    PAK DefaultCollection;
+    [SerializeField] PAK defaultCollection;
     Map objects;
     List<Transform> walls = new List<Transform>();
+    List<GameObject> wallsForDelete = new List<GameObject>();
     GameObject ground;
     GameObject door;
 
-    //[Range(1,20)]
-    public int LevelNumber = 0;
+    [Range(1, 20)]
+    public int LevelNumber = 1;
+    int lastLevelNumber = 0;
 
     public static Action onNextLevelLoad;
 
@@ -31,106 +34,114 @@ public class LoadLevel : MonoBehaviour
     const string paksPath = "Assets/PAKs/";
 
 
-    void Start()
+    public async void BuildLevelInEditor()
     {
-        StartCoroutine(BuildNewScene(true));
+        if (objects == null) objects = new Map(defaultCollection);
+        await LevelBuild();
+        BuildLevel();
+        Optimisation();
+        walls.Clear();
+        wallsForDelete.Clear();
+        DestroyLastScene();
+        lastLevelNumber = LevelNumber;
     }
 
     void Awake()
     {
-        onNextLevelLoad += BuildNewScene;
+        //onNextLevelLoad += BuildNewScene;
     }
 
     void OnDestroy()
     {
-        onNextLevelLoad -= BuildNewScene;
+        //onNextLevelLoad -= BuildNewScene;
     }
 
-    void BuildNewScene()
-    {
-        DestroyLastScene();
-        StartCoroutine(BuildNewScene(false));
-    }
+    //void BuildNewScene()
+    //{
+    //    DestroyLastScene();
+    //    StartCoroutine(BuildNewScene(false));
+    //}
 
-    IEnumerator BuildNewScene(bool isFirstStart)
-    {
-        LevelNumber += 1;
-        if(isFirstStart)
-        {
-            yield return StartCoroutine(LoadBase("PAK1"));
-        }
-        yield return StartCoroutine(LevelBuild(LevelNumber));
-        yield return StartCoroutine(BuildLevel());
-        yield return StartCoroutine(Optimisation());
-    }
+    //IEnumerator BuildNewScene(bool isFirstStart)
+    //{
+    //    Debug.Log("Start building");
+    //    if (isFirstStart)
+    //    {
+    //        yield return StartCoroutine(LoadBase("PAK1"));
+    //    }
+    //    yield return StartCoroutine(LevelBuild(LevelNumber));
+    //    yield return StartCoroutine(BuildLevel());
+    //    Optimisation();
+    //}
 
-    IEnumerator LoadBase(string pakName)
-    {
-        ResourcesLoader.GetPAK($"{paksPath}{pakName}", (pak) =>
-        {
-            DefaultCollection = pak;
-            objects = new Map(DefaultCollection);
-        });
-        yield return new WaitUntil(() => objects != null);
-    }
-
-    IEnumerator LevelBuild(int level)
+    async Task LevelBuild()
     {
         levelAsset = null;
         Material floorMaterial = null, ceilingMaterial = null, doorMaterial = null, doorwayMaterial = null;
 
         //Current level floor material;
-        ResourcesLoader.GetMaterial($"{floorsPath}{level}", (material) =>
+        TaskCompletionSource<bool> flooLoaded = new TaskCompletionSource<bool>();
+        ResourcesLoader.GetMaterial($"{floorsPath}{LevelNumber}", (material) =>
         {
             floorMaterial = material;
+            flooLoaded.SetResult(true);
         });
-        yield return new WaitUntil(() => floorMaterial != null);
-        Debug.Log("Current level floor material;" + $" {level}");
+        await flooLoaded.Task;
+        Debug.Log("Current level floor material;" + $" {LevelNumber}");
+
         //Current level ceiling material;
-        ResourcesLoader.GetMaterial($"{ceilingsPath}{level}", (material) =>
+        TaskCompletionSource<bool> ceilingLoaded = new TaskCompletionSource<bool>();
+        ResourcesLoader.GetMaterial($"{ceilingsPath}{LevelNumber}", (material) =>
         {
             ceilingMaterial = material;
+            ceilingLoaded.SetResult(true);
         });
-        yield return new WaitUntil(() => ceilingMaterial != null);
-        Debug.Log("Current level ceiling material;" + $" {level}");
+        await ceilingLoaded.Task;
+        Debug.Log("Current level ceiling material;" + $" {LevelNumber}");
 
         //Current level door material;
-        ResourcesLoader.GetMaterial($"{doorsPath}{level}", (material) =>
+        TaskCompletionSource<bool> doorLoaded = new TaskCompletionSource<bool>();
+        ResourcesLoader.GetMaterial($"{doorsPath}{LevelNumber}", (material) =>
         {
             doorMaterial = material;
+            doorLoaded.SetResult(true);
         });
-        yield return new WaitUntil(() => doorMaterial != null);
-        Debug.Log("Current level door material;" + $" {level}");
+        await doorLoaded.Task;
+        Debug.Log("Current level door material;" + $" {LevelNumber}");
 
         //Current level doorway material;
+        TaskCompletionSource<bool> doorwayLoaded = new TaskCompletionSource<bool>();
         ResourcesLoader.GetMaterial(doorwaysPath, (material) =>
         {
             doorwayMaterial = material;
+            doorwayLoaded.SetResult(true);
         });
-        yield return new WaitUntil(() => doorwayMaterial != null);
-        Debug.Log("Current level doorway material;" + $" {level}");
+        await doorwayLoaded.Task;
+        Debug.Log("Current level doorway material;" + $" {LevelNumber}");
 
         //Current level text asset;
-        ResourcesLoader.GetLevel($"{levelsPath}{level}", (textasset) =>
+        TaskCompletionSource<bool> levelLoaded = new TaskCompletionSource<bool>();
+        ResourcesLoader.GetLevel($"{levelsPath}{LevelNumber}", (textasset) =>
         {
             levelAsset = textasset;
+            levelLoaded.SetResult(true);
         });
-        yield return new WaitUntil(() => levelAsset != null);
-        Debug.Log("Current level text asset;" + $" {level}" + "\n" + "---------");
+        await levelLoaded.Task;
+        Debug.Log("Current level text asset;" + $" {LevelNumber}" + "\n" + "---------");
 
 
-        ground = BuildCurrentLevelObject(DefaultCollection.Ground, (floorMaterial, ceilingMaterial));
-        door = BuildCurrentLevelObject(DefaultCollection.Door, (doorMaterial, doorwayMaterial));
-        yield return null;
+        ground = BuildCurrentLevelObject(defaultCollection.Ground, (floorMaterial, ceilingMaterial));
+        door = BuildCurrentLevelObject(defaultCollection.Door, (doorMaterial, doorwayMaterial));
     }
 
     void DestroyLastScene()
     {
-        GameObject obj = GameObject.Find($"game{LevelNumber}");
+        if (lastLevelNumber == LevelNumber) return;
+        GameObject obj = GameObject.Find($"game{lastLevelNumber}");
 
         if (obj != null)
         {
-            Destroy(obj);
+            DestroyImmediate(obj);
         }
     }
 
@@ -163,7 +174,7 @@ public class LoadLevel : MonoBehaviour
         return baseObject;
     }
 
-    IEnumerator Optimisation()
+    void Optimisation()
     {
         for (int i = 0; i < walls.Count; i++)
         {
@@ -175,14 +186,17 @@ public class LoadLevel : MonoBehaviour
             {
                 foreach (var element in elements)
                 {
-                    Destroy(element.gameObject);
+                    wallsForDelete.Add(element.gameObject);
                 }
             }
             //break;
         }
 
-        yield return null;
-        walls.Clear();
+        foreach(GameObject wall in wallsForDelete)
+        {
+            DestroyImmediate(wall);
+        }
+        Debug.Log("Optimisation end");
     }
 
     void BuildDoor(GameObject objectToSpawn, int x, int y, Transform parent, char symbol)
@@ -197,7 +211,7 @@ public class LoadLevel : MonoBehaviour
         }
     }
 
-    IEnumerator BuildLevel()
+    void BuildLevel()
     {
         var charArray = levelAsset.text.ToCharArray();
 
@@ -225,6 +239,13 @@ public class LoadLevel : MonoBehaviour
                             case '9':
                                 BuildDoor(newObject, -x, y, levelParent.transform, charArray[i - 1]);
                                 break;
+                            case 'h':
+                            case 'i':
+                            case 'j':
+                            case 'k':
+                            case 'l':
+                                CreateEntity(newObject, -x, y, levelParent.transform, 0);
+                                break;
                             default:
                                 CreateEntity(newObject, -x, y, levelParent.transform, 1);
                                 break;
@@ -237,6 +258,5 @@ public class LoadLevel : MonoBehaviour
         }
 
         CreateEntity(ground, 0, 0, levelParent.transform, 1);
-        yield return null;
     }
 }

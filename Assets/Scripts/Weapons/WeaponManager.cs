@@ -153,6 +153,12 @@ public class WeaponManager : MonoBehaviour
                 SaveWeaponsState();
                 LoadLevel.onNextLevelLoad?.Invoke();
             }
+
+            if (hitInfo.collider.tag == "Door")
+            {
+                var door = hitInfo.collider.GetComponent<DoorAction>();
+                door.OpenDoor();
+            }
         }
     }
 

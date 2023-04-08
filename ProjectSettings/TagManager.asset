@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Barrel
-  - Head
-  - Body
+  - Enemy
+  - Prop
   - NextLevel
+  - Door
   layers:
   - Default
   - TransparentFX

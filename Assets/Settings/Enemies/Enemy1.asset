@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bfb097d8ad8a445b30959141acf9d2, type: 3}
+  m_Name: Enemy1
+  m_EditorClassIdentifier: 
+  CanShoot: 1
+  Speed: 4
+  Endurance: 100
+  Power: 10
+  Time: 10
+  AttractionDistance: 500
+  AttackDistance: 334
+  Walk:
+  - {fileID: 2800000, guid: e905c781da20d9e4d8bb94f5dd0b034e, type: 3}
+  - {fileID: 2800000, guid: b27e001691adc4e4b9c99b4f12c792d4, type: 3}
+  - {fileID: 2800000, guid: 27dfc8ce6132f7f408ec3f4de53bb7e1, type: 3}
+  - {fileID: 2800000, guid: 348cdbd2bc74f4a4688ae9e66fdd1d5e, type: 3}
+  Attack:
+  - {fileID: 2800000, guid: bb5844f134e7b344f964ca5cc7bbc4bd, type: 3}
+  - {fileID: 2800000, guid: 9b757706d2215a94b892fa373ee3b433, type: 3}
+  Die:
+  - {fileID: 2800000, guid: 58f20649e22d6c049967a6920a94436e, type: 3}
+  - {fileID: 2800000, guid: 72795dff14ffecb4f8178a2fc400a54c, type: 3}
+  - {fileID: 2800000, guid: 44ab34ed513b52849974c2456fde8464, type: 3}
+  - {fileID: 2800000, guid: f5b6bc82862b06744a9525b207bd1cee, type: 3}
+  - {fileID: 2800000, guid: 4b0fef6a470281544be6e2d24b894ff0, type: 3}

@@ -57,6 +57,7 @@ public class EnemyDefault : MonoBehaviour
     void Start()
     {
         health = enemySetting.Endurance;
+        agent.speed = enemySetting.Speed;
     }
 
     public virtual void Attack()

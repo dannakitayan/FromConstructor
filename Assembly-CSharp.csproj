@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Biilboard\Billboard.cs" />
+    <Compile Include="Assets\Scripts\Doors\DoorState.cs" />
     <Compile Include="Assets\Scripts\Settings\EnemySetting.cs" />
     <Compile Include="Assets\Scripts\Settings\ItemSetting.cs" />
     <Compile Include="Assets\Scripts\PathFind\Monster.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Items\ItemsType.cs" />
     <Compile Include="Assets\Scripts\Weapons\DefaultWeapon.cs" />
+    <Compile Include="Assets\Scripts\Doors\DoorAction.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponManager.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapons.cs" />
     <Compile Include="Assets\Scripts\ResourcesLoader\ResourcesLoader.cs" />
@@ -85,8 +87,6 @@
     <Compile Include="Assets\Scripts\Items\TakeItem.cs" />
     <Compile Include="Assets\Scripts\Settings\WeaponSetting.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyDefault.cs" />
-    <Compile Include="Assets\Scripts\Doors\DoorAction.cs" />
-    <Compile Include="Assets\Scripts\Doors\DoorState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\GameResources\Levels\game12.txt" />

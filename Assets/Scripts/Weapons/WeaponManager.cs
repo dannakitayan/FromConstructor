@@ -145,7 +145,7 @@ public class WeaponManager : MonoBehaviour
         int num = 2;
         num = ~num;
         RaycastHit hitInfo;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, /*weaponParameter.Range*/ 5, num) && hitInfo.collider != null)
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, /*weaponParameter.Range*/ 2, num) && hitInfo.collider != null)
         {
             //Debug.Log(hitInfo.collider.tag);
             if (hitInfo.collider.tag == "NextLevel")
@@ -157,6 +157,9 @@ public class WeaponManager : MonoBehaviour
             if (hitInfo.collider.tag == "Door")
             {
                 var door = hitInfo.collider.GetComponent<DoorAction>();
+                if (door.State == DoorState.Open) return;
+                if (Vector3.Distance(Player.onPositionGet.Invoke(), hitInfo.collider.transform.position) > 5f) return;
+                Debug.Log("Action");
                 door.OpenDoor();
             }
         }

@@ -28,7 +28,6 @@ public class DoorAction : MonoBehaviour
         while (state == DoorState.Open)
         {
             float distance = Vector3.Distance(transform.position, Player.onPositionGet.Invoke());
-            Debug.Log($"Distance {distance}");
 
             if (distance > 5f)
             {

@@ -14,9 +14,9 @@ public class EnemySetting : ScriptableObject
     public int Power = 1;
     [Range(2, 15)]
     public int Time = 6;
-    [Range(1, 200)]
+    [Range(1, 500)]
     public int AttractionDistance = 1;
-    [Range(1, 200)]
+    [Range(1, 500)]
     public int AttackDistance = 1;
     [Header("Animations")]
     public Texture2D[] Walk;

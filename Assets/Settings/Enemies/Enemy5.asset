@@ -17,8 +17,8 @@ MonoBehaviour:
   Endurance: 2
   Power: 2
   Time: 6
-  AttractionDistance: 108
-  AttackDistance: 24
+  AttractionDistance: 400
+  AttackDistance: 209
   Walk:
   - {fileID: 2800000, guid: ee561ec5605791d46abd6d2ed29f58f1, type: 3}
   - {fileID: 2800000, guid: 2e84902e286d2e642918fcf4698ecf69, type: 3}

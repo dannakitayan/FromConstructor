@@ -345,6 +345,14 @@ MonoBehaviour:
     m_Address: Assets/GameResources/Levels/game14.txt
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 606ce53d6876bbe4b820a36a3c79c6a1
+    m_Address: Assets/GameResources/Objects/Levels/game1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 83e8cea5a3d9b43469e252c3416b05ad
+    m_Address: Assets/GameResources/Objects/Levels/game2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 23d295ea61d58704d978771e2cb75710, type: 2}
   m_SchemaSet:

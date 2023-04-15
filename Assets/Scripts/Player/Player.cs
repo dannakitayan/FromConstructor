@@ -10,26 +10,23 @@ public class Player : MonoBehaviour
 	[Header("Mouse sensitivity")]
 	[SerializeField] float mouseSensitivity;
 
-	//The head by camera;
 	[Header("Head")]
 	public Camera HeroHead;
 
 	//bool grounded;
 
-	//The player character controller;
 	CharacterController controller;
 
-	//Amounts of rotate position by axis;
 	float rotateAmountX;
 	float rotateAmountY;
 
-	//The vector created for movement; 
 	Vector3 moveVector;
 
 	public static Func<Vector3> onPositionGet;
 
     void Awake()
     {
+		controller = GetComponent<CharacterController>();
 		onPositionGet += GetPlayerPosition;
 	}
 
@@ -40,12 +37,10 @@ public class Player : MonoBehaviour
 
     void Start()
 	{
-		//The CharacterController initialisation; 
-		controller = GetComponent<CharacterController>();
+		
 		CursorLock(true);
 	}
 
-	//Were a cursor locked? 
 	void CursorLock(bool state)
 	{
 		Cursor.visible = !state; 
@@ -62,17 +57,13 @@ public class Player : MonoBehaviour
 
 	void Rotate()
 	{
-		//Setting the values; 
-		rotateAmountX += Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-		rotateAmountY += Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+		rotateAmountX += InputController.GetView.Invoke().x * mouseSensitivity * Time.deltaTime;
+		rotateAmountY += InputController.GetView.Invoke().y * mouseSensitivity * Time.deltaTime;
 
-		//Limit a rotation of the camera along by X axis;
 		rotateAmountY += MainCameraShake.Angle;
 		rotateAmountY = Mathf.Clamp(rotateAmountY, -60f, 60f);
 
-		//Rotate player;
 		transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, rotateAmountX, 0f);
-        //Rotate camera;
         HeroHead.transform.rotation = Quaternion.Euler(-rotateAmountY, HeroHead.transform.rotation.eulerAngles.y, 0);
     }
 
@@ -80,11 +71,11 @@ public class Player : MonoBehaviour
 	{
 		//grounded = controller.isGrounded; //Check the grunt is grounded; 
 
-		moveVector.x = Input.GetAxis("Horizontal") * speed;
+		moveVector.x = InputController.GetMovement.Invoke().x * speed;
 
 		//if (!grounded) moveVector.y -= gravitySpeed; //Grunt falling; 
 
-		moveVector.z = Input.GetAxis("Vertical") * speed;
+		moveVector.z = InputController.GetMovement.Invoke().y * speed;
 		moveVector = transform.TransformDirection(moveVector);
 	}
 
@@ -96,9 +87,8 @@ public class Player : MonoBehaviour
 	void Update()
 	{
 		Movement();
-		Rotate();
+        Rotate();
 
-		//Move the player; 
-		controller.Move(moveVector * Time.deltaTime);
+        controller.Move(moveVector * Time.deltaTime);
 	}
 }

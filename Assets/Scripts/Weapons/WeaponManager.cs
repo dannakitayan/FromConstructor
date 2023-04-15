@@ -6,6 +6,7 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour
 {
     [SerializeField] DefaultWeapon[] weapons;
+    int currentWeaponNumber;
 
     public static Action onShot;
     public static Action<Weapons> onChange;
@@ -26,6 +27,9 @@ public class WeaponManager : MonoBehaviour
         onChange += SetWeapon;
         onAmmoAdd += AddAmmo;
         onSaveWeaponsState += SaveWeaponsState;
+
+        InputController.onUse += Interaction;
+        InputController.onShoot += Shoot;
     }
 
     void OnDestroy()
@@ -33,6 +37,9 @@ public class WeaponManager : MonoBehaviour
         onChange -= SetWeapon;
         onAmmoAdd -= AddAmmo;
         onSaveWeaponsState -= SaveWeaponsState;
+
+        InputController.onUse += Interaction;
+        InputController.onShoot -= Shoot;
     }
 
     void DisableAll()
@@ -52,21 +59,27 @@ public class WeaponManager : MonoBehaviour
         {
             case Weapons.Weapon1:
                 weapons[0].gameObject.SetActive(true);
+                currentWeaponNumber = 0;
                 break;
             case Weapons.Weapon2:
                 weapons[1].gameObject.SetActive(true);
+                currentWeaponNumber = 1;
                 break;
             case Weapons.Weapon3:
                 weapons[2].gameObject.SetActive(true);
+                currentWeaponNumber = 2;
                 break;
             case Weapons.Weapon4:
                 weapons[3].gameObject.SetActive(true);
+                currentWeaponNumber = 3;
                 break;
             case Weapons.Weapon5:
                 weapons[4].gameObject.SetActive(true);
+                currentWeaponNumber = 4;
                 break;
             case Weapons.Weapon6:
                 weapons[5].gameObject.SetActive(true);
+                currentWeaponNumber = 5;
                 break;
         }
 
@@ -151,7 +164,7 @@ public class WeaponManager : MonoBehaviour
             if (hitInfo.collider.tag == "NextLevel")
             {
                 SaveWeaponsState();
-                LoadLevel.onNextLevelLoad?.Invoke();
+                LevelLoader.onLevelLoad?.Invoke();
             }
 
             if (hitInfo.collider.tag == "Door")
@@ -165,41 +178,46 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
+    void Shoot()
+    {
+        weapons[currentWeaponNumber].Shoot();
+    }
+
     void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            onShot?.Invoke();
-        }
+        //if (Input.GetMouseButton(0))
+        //{
+        //    onShot?.Invoke();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Interaction();
-        }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    Interaction();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SetWeapon(Weapons.Weapon1);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SetWeapon(Weapons.Weapon2);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SetWeapon(Weapons.Weapon3);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            SetWeapon(Weapons.Weapon4);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            SetWeapon(Weapons.Weapon5);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            SetWeapon(Weapons.Weapon6);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    SetWeapon(Weapons.Weapon1);
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    SetWeapon(Weapons.Weapon2);
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    SetWeapon(Weapons.Weapon3);
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Alpha4))
+        //{
+        //    SetWeapon(Weapons.Weapon4);
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Alpha5))
+        //{
+        //    SetWeapon(Weapons.Weapon5);
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Alpha6))
+        //{
+        //    SetWeapon(Weapons.Weapon6);
+        //}
     }
 }

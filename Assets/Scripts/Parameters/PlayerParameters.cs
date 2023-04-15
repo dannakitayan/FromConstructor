@@ -16,7 +16,7 @@ public class PlayerCluster
 
     public PlayerCluster()
     {
-        CurrentWeapon = Weapons.Weapon2;
+        CurrentWeapon = Weapons.NULL;
         WeaponsInBag = new Dictionary<Weapons, int>();
         Health = 100;
     }

@@ -16,7 +16,7 @@ public static class ResourcesLoader
             }
             else
             {
-                Debug.Log($"Get material result error: {op.OperationException}");
+                Debug.Log($"Get a material result error: {op.OperationException}");
             }
         };
     }
@@ -31,22 +31,37 @@ public static class ResourcesLoader
             }
             else
             {
-                Debug.Log($"Get PAK result error: {op.OperationException}");
+                Debug.Log($"Get a PAK result error: {op.OperationException}");
             }
         };
     }
 
-    public static void GetLevel(string name, Action<TextAsset> onSetLavel)
+    public static void GetLevel(string name, Action<TextAsset> onSetLevel)
     {
         Addressables.LoadAssetAsync<TextAsset>($"{name}.txt").Completed += (op) =>
         {
             if (op.Status == AsyncOperationStatus.Succeeded)
             {
-                onSetLavel.Invoke(op.Result);
+                onSetLevel.Invoke(op.Result);
             }
             else
             {
-                Debug.Log($"Get level result error: {op.OperationException}");
+                Debug.Log($"Get a level result error: {op.OperationException}");
+            }
+        };
+    }
+
+    public static void GetLevelPrefab(string name, Action<GameObject> onSetLevelPrefab)
+    {
+        Addressables.LoadAssetAsync<GameObject>($"Assets/GameResources/Objects/Levels/{name}.prefab").Completed += (op) =>
+        {
+            if (op.Status == AsyncOperationStatus.Succeeded)
+            {
+                onSetLevelPrefab.Invoke(op.Result);
+            }
+            else
+            {
+                Debug.Log($"Get a level prefab result error: {op.OperationException}");
             }
         };
     }

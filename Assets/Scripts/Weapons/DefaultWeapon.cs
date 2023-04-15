@@ -57,12 +57,6 @@ public class DefaultWeapon : MonoBehaviour
     {
         weaponMaterial.SetTexture("_MainTex", weaponSetting.Sprites[0]);
         MainHud.onAmmoSet(currentAmmo.ToString());
-        WeaponManager.onShot += Shoot;
-    }
-
-    void OnDisable()
-    {
-        WeaponManager.onShot -= Shoot;
     }
 
     public void SetDamage()

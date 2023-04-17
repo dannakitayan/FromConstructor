@@ -97,21 +97,27 @@ public class WeaponManager : MonoBehaviour
         {
             case Weapons.Weapon1:
                 weapons[0].gameObject.SetActive(true);
+                currentWeaponNumber = 0;
                 break;
             case Weapons.Weapon2:
                 weapons[1].gameObject.SetActive(true);
+                currentWeaponNumber = 1;
                 break;
             case Weapons.Weapon3:
                 weapons[2].gameObject.SetActive(true);
+                currentWeaponNumber = 2;
                 break;
             case Weapons.Weapon4:
                 weapons[3].gameObject.SetActive(true);
+                currentWeaponNumber = 3;
                 break;
             case Weapons.Weapon5:
                 weapons[4].gameObject.SetActive(true);
+                currentWeaponNumber = 4;
                 break;
             case Weapons.Weapon6:
                 weapons[5].gameObject.SetActive(true);
+                currentWeaponNumber = 5;
                 break;
         }
 

@@ -80,4 +80,6 @@ public class PAK : ScriptableObject
     public GameObject Enemy5;
     [Header("Player")]
     public GameObject Player;
+    [Header("Empty")]
+    public GameObject Empty;
 }

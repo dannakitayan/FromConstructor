@@ -88,6 +88,6 @@ public class Map
         '8' => rgm.Door,
         '\\' => rgm.Player,
 
-        _ => rgm.Tex40
+        _ => rgm.Empty
     };
 }

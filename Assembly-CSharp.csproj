@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\LoadLevel\Map.cs" />
     <Compile Include="Assets\Scripts\Sprites\Prop.cs" />
     <Compile Include="Assets\Input\GameInput.cs" />
+    <Compile Include="Assets\Scripts\MainHud\Frames.cs" />
     <Compile Include="Assets\Scripts\Weapons\MainCameraShake.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
@@ -91,7 +92,6 @@
     <Compile Include="Assets\Scripts\Items\TakeItem.cs" />
     <Compile Include="Assets\Scripts\Settings\WeaponSetting.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyDefault.cs" />
-    <Compile Include="Assets\Scripts\MainHud\Frames.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\GameResources\Levels\game12.txt" />
